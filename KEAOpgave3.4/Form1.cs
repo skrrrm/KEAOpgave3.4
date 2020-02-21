@@ -22,20 +22,32 @@ namespace KEAOpgave3._4
     {
         // Variabler
         Random random1 = new Random();
-        Random random2 = new Random();
         double first, second, result, userResult;
+
+        private void buttonReset_Click(object sender, EventArgs e) // Reset button 
+        {
+            // Should have made this into a method
+            first = Convert.ToDouble(random1.Next(0, 10)); // Random number is put into the variable 'first'
+            second = Convert.ToDouble(random1.Next(0, 10)); // Random number is put into the variable 'second'
+            result = first * second; // We do the calculation already so we can check the user calculation later
+            labelInfo.Text = $"What is {first} multiplied by {second}?"; // Info text.
+            labelResult.Text = "";
+            textBoxResult.Text = "";
+        }
 
         public Form1()
         {
             InitializeComponent();
+
+            // Should have made this into a method
             first = Convert.ToDouble(random1.Next(0, 10)); // Random number is put into the variable 'first'
-            second = Convert.ToDouble(random2.Next(0, 10)); // Random number is put into the variable 'second'
+            second = Convert.ToDouble(random1.Next(0, 10)); // Random number is put into the variable 'second'
             result = first * second; // We do the calculation already so we can check the user calculation later
             labelInfo.Text = $"What is {first} multiplied by {second}?"; // Info text
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // Calculate button
         {
             try
             {
