@@ -23,15 +23,15 @@ namespace KEAOpgave3._4
         // Variabler
         Random random1 = new Random();
         Random random2 = new Random();
-        double first, second, result, doubleTextboxResult;
+        double first, second, result, userResult;
 
         public Form1()
         {
             InitializeComponent();
-            first = Convert.ToDouble(random1.Next(0, 10));
-            second = Convert.ToDouble(random2.Next(0, 10));
-            result = first * second;
-            labelInfo.Text = $"What is {first} multiplied by {second}?";
+            first = Convert.ToDouble(random1.Next(0, 10)); // Random number is put into the variable 'first'
+            second = Convert.ToDouble(random2.Next(0, 10)); // Random number is put into the variable 'second'
+            result = first * second; // We do the calculation already so we can check the user calculation later
+            labelInfo.Text = $"What is {first} multiplied by {second}?"; // Info text
 
         }
 
@@ -39,16 +39,16 @@ namespace KEAOpgave3._4
         {
             try
             {
-                doubleTextboxResult = Convert.ToDouble(textBoxResult.Text);
+                userResult = Convert.ToDouble(textBoxResult.Text); // checking the entered result is a double/number
             }
             catch
             {
-                labelError.Text = "Numbers only";
+                labelError.Text = "Numbers only!"; // Error
             }
 
-            if (result == doubleTextboxResult)
+            if (result == userResult) // We compare user-result with the actual result, if correct..
                 labelResult.Text = "Correct!";
-            else if (result != doubleTextboxResult)
+            else if (result != userResult) // We compare user-result with actual result, if incorrect..
                 labelResult.Text = $"Incorrect! The result is {result}";
         }
     }
