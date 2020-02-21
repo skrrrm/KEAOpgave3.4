@@ -15,6 +15,7 @@ using System.Windows.Forms;
  * Brugeren taster resultatet ind (husk, at indtastning i en textBox ikke er tal).
  * Programmet skal angive om facit er rigtigt eller forkert. 
  * Hvis facit er forkert skal det rigtige facit angives.
+ * Udvid eventuelt programmet så antallet af rigtige og forkerte svar kan opgøres.
 */
 namespace KEAOpgave3._4
 {
@@ -23,6 +24,8 @@ namespace KEAOpgave3._4
         // Variabler
         Random random1 = new Random();
         double first, second, result, userResult;
+        int countWrong = 0;
+        int countCorrect = 0;
 
         private void buttonReset_Click(object sender, EventArgs e) // Reset button 
         {
@@ -33,6 +36,7 @@ namespace KEAOpgave3._4
             labelInfo.Text = $"What is {first} multiplied by {second}?"; // Info text.
             labelResult.Text = "";
             textBoxResult.Text = "";
+            
         }
 
         public Form1()
@@ -59,9 +63,15 @@ namespace KEAOpgave3._4
             }
 
             if (result == userResult) // We compare user-result with the actual result, if correct..
+            {
                 labelResult.Text = "Correct!";
+                labelCorrect.Text = $"You've got {countCorrect = countCorrect + 1} correct answers"; // Counts the score of correct answers
+            }
             else if (result != userResult) // We compare user-result with actual result, if incorrect..
+            {
                 labelResult.Text = $"Incorrect! The result is {result}";
+                labelWrong.Text = $"You've got {countWrong = countWrong +1 } wrong answers"; // Counts the score of wrong answers
+            }
         }
     }
 }

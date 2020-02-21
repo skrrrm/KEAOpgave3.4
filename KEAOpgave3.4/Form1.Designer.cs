@@ -34,6 +34,8 @@
             this.labelResult = new System.Windows.Forms.Label();
             this.labelError = new System.Windows.Forms.Label();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.labelCorrect = new System.Windows.Forms.Label();
+            this.labelWrong = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxResult
@@ -87,11 +89,29 @@
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
+            // labelCorrect
+            // 
+            this.labelCorrect.AutoSize = true;
+            this.labelCorrect.Location = new System.Drawing.Point(496, 336);
+            this.labelCorrect.Name = "labelCorrect";
+            this.labelCorrect.Size = new System.Drawing.Size(0, 25);
+            this.labelCorrect.TabIndex = 6;
+            // 
+            // labelWrong
+            // 
+            this.labelWrong.AutoSize = true;
+            this.labelWrong.Location = new System.Drawing.Point(497, 378);
+            this.labelWrong.Name = "labelWrong";
+            this.labelWrong.Size = new System.Drawing.Size(0, 25);
+            this.labelWrong.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelWrong);
+            this.Controls.Add(this.labelCorrect);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.labelResult);
@@ -113,6 +133,8 @@
         private System.Windows.Forms.Label labelResult;
         private System.Windows.Forms.Label labelError;
         private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.Label labelCorrect;
+        private System.Windows.Forms.Label labelWrong;
     }
 }
 
