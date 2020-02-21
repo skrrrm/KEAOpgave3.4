@@ -24,8 +24,7 @@ namespace KEAOpgave3._4
         // Variabler
         Random random1 = new Random();
         double first, second, result, userResult;
-        int countWrong = 0;
-        int countCorrect = 0;
+        int countWrong = 0, countCorrect = 0;
 
         private void buttonReset_Click(object sender, EventArgs e) // Reset button 
         {
@@ -36,7 +35,6 @@ namespace KEAOpgave3._4
             labelInfo.Text = $"What is {first} multiplied by {second}?"; // Info text.
             labelResult.Text = "";
             textBoxResult.Text = "";
-            
         }
 
         public Form1()
@@ -48,7 +46,6 @@ namespace KEAOpgave3._4
             second = Convert.ToDouble(random1.Next(0, 10)); // Random number is put into the variable 'second'
             result = first * second; // We do the calculation already so we can check the user calculation later
             labelInfo.Text = $"What is {first} multiplied by {second}?"; // Info text
-
         }
 
         private void button1_Click(object sender, EventArgs e) // Calculate button
@@ -65,12 +62,14 @@ namespace KEAOpgave3._4
             if (result == userResult) // We compare user-result with the actual result, if correct..
             {
                 labelResult.Text = "Correct!";
-                labelCorrect.Text = $"You've got {countCorrect = countCorrect + 1} correct answers"; // Counts the score of correct answers
+                labelCorrect.Text = $"You've got {countCorrect = countCorrect + 1} correct answers";
+                // Counts the score of correct answers
             }
             else if (result != userResult) // We compare user-result with actual result, if incorrect..
             {
                 labelResult.Text = $"Incorrect! The result is {result}";
-                labelWrong.Text = $"You've got {countWrong = countWrong +1 } wrong answers"; // Counts the score of wrong answers
+                labelWrong.Text = $"You've got {countWrong = countWrong + 1 } wrong answers";
+                // Counts the score of wrong answers
             }
         }
     }
